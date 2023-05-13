@@ -1,0 +1,19 @@
+export type PostsCardsType = {
+  userId: string;
+  username?: string;
+  title: string;
+  content: string;
+};
+
+export interface PostsType {
+  title: string;
+  content: string;
+  date: string;
+  _id: string;
+}
+
+export interface UserType {
+  _id: string;
+  username: string;
+  posts: Posts[];
+}
