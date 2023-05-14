@@ -17,3 +17,13 @@ export interface UserType {
   username: string;
   posts: Posts[];
 }
+
+declare module "next-auth" {
+  interface session {
+    user: {
+      id: string;
+      name: string;
+      accessToken: string;
+    };
+  }
+}

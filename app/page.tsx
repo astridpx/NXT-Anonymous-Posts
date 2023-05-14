@@ -9,10 +9,10 @@ export default function Home() {
         <form action="" className="bg-red-400 p-4 w-2/4 h-max">
           <h1 className="text-center text-xl mb-4 font-semibold">Post Here!</h1>
           <div className="p-2 flex items-center ">
-            <label htmlFor="username" className="font-semibold mr-4">
-              Username
+            <label htmlFor="title" className="font-semibold mr-4">
+              Title
             </label>
-            <input type="text" name="username" autoComplete="off" />
+            <input type="text" name="title" autoComplete="off" />
           </div>
           <div>
             <textarea

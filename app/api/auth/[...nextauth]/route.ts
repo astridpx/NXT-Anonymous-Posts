@@ -27,11 +27,10 @@ const authOptions: NextAuthOptions = NextAuth({
         });
 
         const user = await res.json();
-
+        console.log(user);
         if (res.ok && user?.token) {
-          console.log(user);
           return user;
-        } else return null;
+        } else throw new Error(user?.message);
       },
     }),
   ],
@@ -42,6 +41,17 @@ const authOptions: NextAuthOptions = NextAuth({
 
   session: {
     strategy: "jwt",
+  },
+
+  callbacks: {
+    async jwt({ token, user }) {
+      return { ...token, ...user };
+    },
+
+    async session({ session, token }) {
+      session.user = token as any;
+      return session;
+    },
   },
 });
 

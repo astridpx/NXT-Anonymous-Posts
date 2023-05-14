@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import SignOutButton from "./SignOutButton";
 
 export default function Navbar() {
   return (
@@ -8,22 +9,28 @@ export default function Navbar() {
         <h1 className="text-3xl text-gray-800 font-bold mx-4 ">
           Anonymous Post
         </h1>
-        <div className="">
-          <Link href="/" className="mx-2 text-lg text-gray-600 font-semibold ">
-            Home
-          </Link>
-          <Link
-            href="/Posts"
-            className="mx-2 text-lg text-gray-600 font-semibold "
-          >
-            Posts
-          </Link>
-          <Link
-            href="/Members"
-            className="mx-2 text-lg text-gray-600 font-semibold "
-          >
-            Members
-          </Link>
+        <div className="flex items-center justify-between px-4">
+          <div>
+            <Link
+              href="/"
+              className="mx-2 text-lg text-gray-600 font-semibold "
+            >
+              Home
+            </Link>
+            <Link
+              href="/Posts"
+              className="mx-2 text-lg text-gray-600 font-semibold "
+            >
+              Posts
+            </Link>
+            <Link
+              href="/Members"
+              className="mx-2 text-lg text-gray-600 font-semibold "
+            >
+              Members
+            </Link>
+          </div>
+          <SignOutButton />
         </div>
       </div>
     </>
